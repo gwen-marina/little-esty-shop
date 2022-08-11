@@ -39,8 +39,9 @@ class ItemsController < ApplicationController
     if item.save
       redirect_to merchant_items_path
     else
-      redirect_to new_merchant_items_path
-      flash[:error] = "Unable to create items."
+      flash[:error] = "Unable to create items.
+                       Please make sure all fields are filled in."
+      redirect_to "/merchants/#{merchant.id}/items/new"
     end
   end
 

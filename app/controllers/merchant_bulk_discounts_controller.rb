@@ -14,11 +14,12 @@ class MerchantBulkDiscountsController < ApplicationController
   end
 
   def create
-   bulk_discount = BulkDiscount.new(bulk_discount_params)
+   bulk_discount = BulkDiscount.new(percentage: params[:percentage], quantity_threshold: params[:quantity_threshold], merchant_id: params[:merchant_id])
     if bulk_discount.save 
       redirect_to "/merchants/#{params[:merchant_id]}/bulk_discounts"
     else  
-      flash[:alert] = "Error: #{(bulk_discount.errors)}"
+      flash.notice = "Percentage and Quantity Threshold fields cannot be blank.
+                      Please fill in both fields."
       redirect_to "/merchants/#{params[:merchant_id]}/bulk_discounts/new"
     end
   end
