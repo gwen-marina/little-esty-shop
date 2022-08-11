@@ -1,5 +1,7 @@
 <h1>Bulk Discount Index for <%= @merchant.name %></h1>
 
+<h4><%=link_to "#{@merchant.name}'s Invoice Index", "/merchants/#{@merchant.id}/invoices" %></h4>
+
 <h2><%= @merchant.name %></h2>
   <% @merchant.bulk_discounts.each do |discount| %>
     <div id="discount-<%= discount.id %>">
@@ -17,5 +19,7 @@
     <p>name: <%= holiday.name %> </p>
     <p>date: <%= holiday.date %></p>
   <% end %>
+
+
 
 

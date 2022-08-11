@@ -1,5 +1,9 @@
 <h1>Merchant Items</h1>
 
+<h4><%=link_to "#{@merchant.name}'s Invoice Index", "/merchants/#{@merchant.id}/invoices" %></h4>
+
+<h4><%=link_to 'View all discounts', "/merchants/#{@merchant.id}/bulk_discounts" %></h4>
+
 <p><%= link_to "Create New Item", new_merchant_item_path %></p>
 
 <div id='enabled'>

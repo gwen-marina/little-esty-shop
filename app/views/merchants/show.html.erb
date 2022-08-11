@@ -1,7 +1,7 @@
 <h1>Little Esty Shop</h1>
 
 <div id = "merchant">
-<%=@merchant.name %>
+<h3>Merchant name: <%=@merchant.name %></h3>
 </div>
 
 <h4><%=link_to "#{@merchant.name}'s Item Index", "/merchants/#{@merchant.id}/items" %></h4>
